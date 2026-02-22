@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+import os
 
 INERTIA_LAYOUT = 'base.html'
 DJANGO_VITE_ASSETS_PATH = ''
@@ -31,7 +32,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-rgvi*=j#uxty(72wg_(4!x4)00ae4k3w^ny(t(9^6opc*0vah-'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-change-me-in-production')
 
 ALLOWED_HOSTS = []
 
